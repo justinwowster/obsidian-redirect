@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Opening in Obsidian…</title></head>
+<body style="font-family:system-ui;padding:2rem">
+<p>Opening in Obsidian… If nothing happens, <a id="l" href="#">click here</a>.</p>
+<script>
+  var p = new URLSearchParams(location.search);
+  var vault = p.get("vault") || "JaavOS";
+  var file = p.get("file") || "";
+  var url = "obsidian://open?vault=" + encodeURIComponent(vault) + "&file=" + encodeURIComponent(file);
+  document.getElementById("l").href = url;
+  location.replace(url);
+</script>
+</body>
+</html>
